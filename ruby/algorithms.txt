@@ -1,0 +1,64 @@
+The building you are in has 6 floors.
+Wait for elevator doors to open
+Walk inside the elevator. 
+Turn to face the inside of the elevator doors.
+The doors will close on their own.
+Search for numbers 1-10 located on either the right or left side of the doors.
+If you want to go to floor 2, press 2.
+If you want to go to floor 3, press 3.
+If you want to go to floor 4, press 4.
+If you want to go to floor 5, press 5.
+If you want to go to floor 6, press 6.
+Wait for the elevator to reach your floor and walk out when the door opens.
+If you do not wish to go to any floor, press the “door open” button and walk out.
+
+OMELLETE:
+
+
+Find the refrigerator.
+Open the front door.
+Search for eggs.
+Open egg carton.
+Take out 3 eggs.
+Search for milk.
+Take the milk out of the refrigerator. 
+Close the refrigerator door.
+Walk to nearest counter.
+Place eggs gently on the counter in a place where they don’t roll off.
+Put down the milk next to eggs.
+Find a whisk.
+Put the whisk down next to the milk.
+Find a bowl.
+Place the bowl on an empty part of the counter.
+Find a measuring cup that measures 1/2 cup.
+Take one egg.
+Hold the egg in one hand, and the side of the bowl with the other.
+With one hand, gently crack it open on the side of the bowl.
+Using both hands, open the shell to let the inside yolk and whites out into the bowl.
+Discard the shell in the nearest trash can.
+Repeat for two remaining eggs.
+Open milk carton. 
+Measure half a cup of milk using the measuring cup.
+Pour the contents of the measuring cup into the bowl with the three eggs.
+Put the measuring cup down. 
+Pick up the whisk by the handle.
+Place the part of the whisk opposite the handle into the bowl.
+Make a circular motion until all elements are mixed.
+Put the whisk back on the table.
+Find a frying pan.
+Pick it up.
+Take it to the stove.
+Place it centered on one burner. 
+Turn that burner on to “medium”.
+Go back and pick up the bowl.
+Pour the contents of the bowl into the frying pan slowly.
+Put the bowl back on the table.
+Find a spatula.
+Pick up the spatula and walk back to the pan.
+Wait 4 minutes.
+From the side of the frying pan, slide the spatula under the contents of the frying pan halfway.
+Flip that half so it is now on top of the other half.
+Wait 3 minutes.
+Turn the stove off.
+Put the spatula in the sink.
+Congratulations you just made an omelette.
