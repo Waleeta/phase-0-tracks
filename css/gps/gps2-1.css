@@ -1,3 +1,61 @@
-h1 {
-	color: blue;
+body {
+  background-color: snow;
+}
+
+header {
+  display: inline-block;
+  color: gray;
+
+}  
+
+h1
+{
+  text-align: center;
+
+}
+  
+  footer {
+   display: block;
+   position:relative;
+   bottom:0px;
+   height:30px;
+   width:80%;
+   clear: both;
+   text-align: left;
+   padding: 10px;
+   color: gray;
+
+}
+
+.column-1 {
+  border: solid;
+  position: relative;
+  float: left;
+  width: 35%;
+  margin: 60px;
+  verical-align: center;
+  vertical-align: top;
+  display: inline-block;
+  text-align: top;
+  padding: 15px;
+  border-radius: 10px;
+  border-color: gray;
+  background-color: salmon;
+ 
+}
+
+.column-2 {
+  display: inline-block;
+  border: solid;
+  position: relative;
+  float: left;
+  width: 35%;
+  margin: 60px;
+  vertical-align: center
+  vertical-align: top;
+  text-align: top;
+  padding: 15px;
+  border-radius: 10px;
+  border-color: gray;
+  background-color: salmon;
 }
