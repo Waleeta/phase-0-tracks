@@ -1,38 +1,40 @@
+def vampire 
 current_year = 2016
+vampire_status = "Results inconclusive" 
 
-puts "What is your name?"
-name = gets.chomp
+puts "what's your name?"
+name = gets.chomp 
 
-puts "How old are you?"
-age = gets.chomp.to_i
-
+puts "What's your age?"
+age = gets.chomp.to_i 
 
 puts "What year were you born?"
-birth_year = gets.chomp.to_i
+birth_year = gets.chomp.to_i 
 
+puts "Do you want garlic bread? Y/N"
+garlic_bread = gets.chomp 
 
-puts "Our company cafeteria serves garlic bread. Should we order some for you?"
-garlic_bread = gets.chomp
-
-puts "Would you like to enroll in the company’s health insurance?"
+puts "Do you want health insurance? Y/N"
 insurance = gets.chomp
 
-if age == (current_year - birth_year) && ((garlic_bread == "Yes") || (insurance == "Yes"))
-			puts "Probably not a vampire."
-	elsif age !=(current_year - birth_year) && ((garlic_bread == "No") && (insurance == "No"))
-			puts "Almost certainly a vampire."
-	elsif age !=(current_year - birth_year) && (garlic_bread == "No") || (insurance == "No"))
-			puts "Probably a vampire."
-	elsif name == "Drake Cula" || name == "Tu Fang"
-			puts "Definitely a vampire."
-	else 
-		puts "Results inconclusive."
+if age == (current_year - birth_year) && (garlic_bread == "Y" || insurance == "Y")
+	then vampire_status = "Probably not a vampire" 
 end
 
-# use separate if statements
-#create a variable that changes status with each iteration of the if statements.
+if age != (current_year - birth_year) && (garlic_bread == "N" || insurance == "N")
+	then vampire_status = "Probably a vampire." 
+end
+
+if age != (current_year - birth_year) && (garlic_bread == "N" && insurance == "N")
+	then vampire_status = "Almost certainly a vampire" 
+end
+
+if name == ("Drake Cula") || (name == "Tu Fang")
+	then vampire_status = "DEFINITELY a vampire."
+end
 
 
+puts vampire_status
+end
 
-
-
+vampire 
