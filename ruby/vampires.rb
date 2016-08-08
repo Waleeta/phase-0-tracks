@@ -54,3 +54,5 @@ end
 
 (num).times do vampire
 end
+
+print "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
