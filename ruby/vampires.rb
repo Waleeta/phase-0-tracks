@@ -20,6 +20,14 @@ garlic_bread = gets.chomp
 puts "Do you want health insurance? Y/N"
 insurance = gets.chomp
 
+puts "List your allergies:"
+allergies = gets.chomp.downcase
+
+until allergies == "done" || allergies == "sunshine"
+	print "next allergy:"
+	allergies = gets.chomp.downcase
+end
+
 if age == (current_year - birth_year) && (garlic_bread == "Y" || insurance == "Y")
 	then vampire_status = "Probably not a vampire" 
 end
@@ -34,6 +42,10 @@ end
 
 if name == ("Drake Cula") || (name == "Tu Fang")
 	then vampire_status = "DEFINITELY a vampire."
+end
+
+if allergies == "sunshine"
+	then vampire_status = "Probably a vampire."
 end
 
 
