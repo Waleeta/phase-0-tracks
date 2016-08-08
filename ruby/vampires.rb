@@ -1,3 +1,6 @@
+puts "How many?"
+num = gets.chomp.to_i 
+
 def vampire 
 current_year = 2016
 vampire_status = "Results inconclusive" 
@@ -37,4 +40,5 @@ end
 puts vampire_status
 end
 
-vampire 
+(num).times do vampire
+end
