@@ -1,3 +1,17 @@
+def adds_new(array, value)
+	array << value
+end 
+array_test = [20, 30, 40]
+p adds_new(array_test, 9)
+
+
+def build_array(a, b, c)
+	new_array = []
+	new_array = [a, b, c]
+end
+
+
+
  pizza_toppings = [ ]
 
  pizza_toppings << "cheese"
@@ -23,5 +37,5 @@ food_toppings = pizza_toppings + burger_toppings
 p food_toppings
 
 
-
+p build_array("Fuzzy", "2", "four")
 
