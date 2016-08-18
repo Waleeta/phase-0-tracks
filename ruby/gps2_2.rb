@@ -20,7 +20,7 @@ grocery_list = create_list("carrots apples cereal pizza")
 def add_to_list(item, quantity, grocery_list) #grocery_list needed in parameter 
 	new_pair = {}
 	new_pair[item] = quantity
-	grocery_list.merge!(new_pair)
+	grocery_list.merge!(new_pair) 
 end
 
 #Used merge! to add more items to the list.
@@ -58,3 +58,23 @@ end
 print_list(grocery_list)
 
 
+# What did you learn about pseudocode from working on this challenge?
+	#Pseudocode is supremely important in trying to organize your logic. If you don't get it right, 
+	#you'll struggle through trying to solve the problem.
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+	#Hashes are valuable in storing key value pairs and were best suited for this challenge. 
+	#The array was only really useful in splitting the original string to push into a hash to be able
+	#to manipulate the values. 
+
+# What does a method return?
+	#A method returns the last line of executable code.
+
+# What kind of things can you pass into methods as arguments?
+	#other methods, variables, integers, strings.
+
+# How can you pass information between methods?
+	#methods can be added inside of other methods. You can create new variables that can push data into other methods.
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+	#I better understand loops and how to manipulate using methods. I still do not quite understand parameters given to methods.
