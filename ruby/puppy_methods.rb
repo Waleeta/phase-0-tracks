@@ -3,7 +3,6 @@ class Puppy
 #Fetch method 
   def fetch(toy)
     puts "I brought back the #{toy}!"
-   toy
   end
  
  #Speak method 
