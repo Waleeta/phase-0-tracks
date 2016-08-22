@@ -1,5 +1,5 @@
-Species: 
-Puppolus Cutilicious
+Class:
+Puppy
 
 Characteristics: 
 cute
