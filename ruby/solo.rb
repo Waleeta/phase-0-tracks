@@ -16,8 +16,8 @@
 #I need some guidance regarding pushing all of the class instances into the array. This worked for my Santa class but even with the same syntax, it isn't working here. 
 
 class Otter 
-		attr_reader :fur_color, :oysters, :swim
-		attr_accessor :fur_color, :oysters, :swim
+		attr_reader :fur_color
+		attr_accessor :fur_color
 		
 	#Initialize method
 		def initialize(fur_color)
