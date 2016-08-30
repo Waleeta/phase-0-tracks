@@ -74,4 +74,30 @@ sqlite> SELECT * FROM chicago_hood_coffee;
 6|Old Irving|9000|Irving and Ashland|60618|2		<—— #5 (Lincoln Square) is gone.
 7|Edgewater|6000|Broadway and Lawrence|60660|1
 
+JOINS:
+
+1. INNER JOIN: (returned all values, as all coffee_id’s matched from 2nd table):
+
+sqlite> SELECT neighborhood, population, cross_streets, zip_code, coffee_id FROM chicago_hood_coffee
+   ...> INNER JOIN coffee_shops ON chicago_hood_coffee.coffee_id=coffee_shops.id;
+
+Wicker Park|4000|Damen and North|60622|2
+Ukrainian Village|3500|Grand and Oakley|60647|1
+Rogers Park|7500|Granville and Clark|60626|3
+Garfield Park|3500|Washington and Lake|60612|3
+Old Irving|9000|Irving and Ashland|60618|2
+Edgewater|6000|Broadway and Lawrence|60660|1
+
+
+
+
+2. Conditional INNER JOIN (only returns Intelligentsia(id=3) coffee matches):
+
+sqlite> SELECT neighborhood, population, cross_streets, zip_code, coffee_id
+   ...> FROM chicago_hood_coffee INNER JOIN coffee_shops
+   ...> ON chicago_hood_coffee.coffee_id = coffee_shops.id
+   ...> WHERE chicago_hood_coffee.coffee_id = 3;
+
+Rogers Park|7500|Granville and Clark|60626|3
+Garfield Park|3500|Washington and Lake|60612|3
 
