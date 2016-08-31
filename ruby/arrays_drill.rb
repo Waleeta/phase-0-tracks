@@ -1,41 +1,34 @@
-def adds_new(array, value)
-	array << value
-end 
-array_test = [20, 30, 40]
-p adds_new(array_test, 9)
+puppies = []
+p puppies
 
+puppies.push("hound", "dalmation", "cocker spaniel", "viszla", "poodle") #for push use ()
+p puppies
 
-def build_array(a, b, c)
-	new_array = []
-	new_array = [a, b, c]
+puppies.delete_at(2) #at index number
+p puppies
+
+puppies.insert(2, "labradoodle") #insert at INDEX 2, new_str
+p puppies
+
+puppies.delete("hound") #deletes matching str
+p puppies
+
+if puppies.include?("viszla") #checks for str
+	puts "Yup, it's there!"
+else
+	puts "Nah."
 end
 
+#combines into a single array, not stored in any variable.
+cats = ["fluffers", "ramona"]
+p puppies + cats 
 
+#combines two arrays as one array, INTO an array: [[]]
+all_animals = []
+all_animals << puppies + cats 
+p all_animals
 
- pizza_toppings = [ ]
-
- pizza_toppings << "cheese"
- pizza_toppings << "pepperoni"
- pizza_toppings << "sausage"
- pizza_toppings << "mushrooms"
- pizza_toppings << "olives"
-p pizza_toppings
-
-pizza_toppings.delete_at(2)
-p pizza_toppings
-
-pizza_toppings.insert(2, "pineapple")
-p pizza_toppings
-
-pizza_toppings.shift
-p pizza_toppings
-p "Does this contain cheese: " + pizza_toppings.include?("cheese").to_s
-
-burger_toppings = ["onions", "tomatoes", "lettuce", "cheese"]
-
-food_toppings = pizza_toppings + burger_toppings
-p food_toppings
-
-
-p build_array("Fuzzy", "2", "four")
-
+#PUSH each array separately, makes an array of an array: [[], []]
+all_animals.push(puppies)
+all_animals.push(cats) 
+p all_animals
