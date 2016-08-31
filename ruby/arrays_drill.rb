@@ -10,6 +10,12 @@ def add_to_array(item1, item2) #where item1 = array
 	item1.insert(-1, item2) #insert at last index position, the second argument(item2)
 end
 
+OR
+
+def add_to_array2(item1, item2)
+	item1.concat(item2) 
+end
+
 
 puppies = []
 p puppies
@@ -51,3 +57,4 @@ build_array("One", "=", 1) #returns ["One", "=", 1]
 build_array(1, 3, 5) #returns [1,3,5]
 add_to_array([], "waleeta") #returns ["waleeta"]
 add_to_array(["this", "is", "my"], "code") # returns ["this", "is", "my", "code"]
+add_to_array2([1,2,3],["a"]) #Using the concat method, if BOTH arguments are ARRAYS
