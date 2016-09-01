@@ -1,59 +1,22 @@
-##Method w/ block
-def new_method
-	puts "Status; Green"
-	yield ("Some value.")
-
-	puts "Status; Green"
+#Passing a BLOCK to a METHOD (3 different ways):
+def greetings
+	puts "Bonjour mes amis!"
+	yield
 end
 
-new_method {|block1|  puts "This is #{block1}"}
+greetings {|greeting = "Hallo meine Freunde!"| puts greeting}
 
-#Define array and has
-
-chi_town = ["Wicker Park", "Edgewater", "Lincoln Park", "Lincoln Square"]
-block_numbers = {"Ashland" => 800, "Randolph" => 200, "Division" => 1200, "Armitage" => 1600}
-
-# Iterates through an array
-chi_town.each do |neighborhood|
-	puts "The neightbord is incorrectly spelled #{neighborhood.next}"
+def greetings
+	puts "Bonjour mes amis!"
+	yield("Hallo meine Freunde")
 end
 
-# MAP an Array
-	p chi_town
+greetings {|greeting| puts "#{greeting}!"}
 
-	chi_town.map! do |neighborhood|
-		neighborhood.reverse
-	end
+def greetings
+	greeting = "Hallo meine Freunde!"
+	puts "Bonjour mes amis!"
+	yield(greeting)
+end
 
-	p chi_town
-
-# Conditional delete of a hash
-
-p block_numbers
-
-	block_numbers.delete_if {|street, block| block > 800}
-
-p block_numbers
-
-#### Conditional selection of an array
-p chi_town
-
-	chi_town.select {|neighborhood| neighborhood.length > 10}
-
-p chi_town
-
-### Conditional rejection (w/ bang operator) of an array
-
-p chi_town
-
-	chi_town.reject! {|neighborhood| neighborhood.length < 10}
-
-p chi_town
-
-
-# Conditionally keeps of a value
-p block_numbers
-
-	block_numbers.keep_if {|street, block| block > 1000}
-
-p block_numbers
+greetings {|greeting| puts greeting}
