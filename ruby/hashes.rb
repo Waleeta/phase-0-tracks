@@ -7,12 +7,15 @@
 	#if YES, ask what they would like to UPDATE and UPDATE the HASH;
 		#then PRINT out the updated list when they're done.
 
+#Initiate empty hash
 interior_decorator = {
 
 }
 
+#Start prompting for input: 
+
 puts "What is your name: "
-interior_decorator[:name] = gets.chomp.to_s
+interior_decorator[:name] = gets.chomp.to_s   #Create KEY/VALUE for HASH in the user response:
 
 puts "What is your age: "
 interior_decorator[:age] = gets.chomp.to_i 
@@ -23,7 +26,7 @@ interior_decorator[:kids] = gets.chomp.to_i
 puts "What is your favorite decor theme: "
 interior_decorator[:decor] = gets.chomp.to_s 
 
-puts "Do you like paisley?"
+puts "Do you like paisley?"					#Create IF/ELSE for boolean response 
 paisley = gets.chomp
 	if paisley == "yes"
 		paisley = true 
@@ -32,12 +35,13 @@ paisley = gets.chomp
 	end 
 interior_decorator[:paisley] = paisley 
 
+#PRINT out responses: 
 puts "Here are your responses: "
 interior_decorator.map do |questions, answers|
 	puts "#{questions}: #{answers}"
 end 
 
-#Prompt for updated answer, then create an if/else block to update according to response. e3
+#PROMPT for updated answer, then create an IF/ELSE block to update according to response. 
 puts "Which field would you like to update, or type 'none': "
 update_response = gets.chomp.downcase
 
@@ -56,7 +60,8 @@ elsif update_response == "decor"
 elsif update_response == "paisley"
 	puts "Enter your updated response: "
 	interior_decorator[:paisley] = gets.chomp
-	if interior_decorator[:paisley] == "yes"
+#NESTED IF/ELSE 
+	if interior_decorator[:paisley] == "yes"			
 		interior_decorator[:paisley] = true
 	else
 		interior_decorator[:paisley] = false
@@ -67,8 +72,9 @@ else
 	puts "That's not a valid response."
 end 
 
-puts "Thank you! Here is your final application: "
-	
+#Thank user and print out the final list:
+
+puts "Thank you! Here is your final application: "	
 interior_decorator.map do |questions, answers|
 	puts "#{questions}: #{answers}"
 end 
