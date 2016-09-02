@@ -15,3 +15,7 @@ end
 #DRIVER CODE:
 
 search_array([3, 6, 19, 33, 4, 23], 19)
+
+#Define a new method that takes in an int 
+#Should return an array of terms of Fibonacci numbers
+#Method should do int.times add the next number to the previous number 
