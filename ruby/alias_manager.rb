@@ -1,43 +1,33 @@
-#Ask a use for a full name 
-#Take a user first and last name, swaps them.
-# Change each vowel to the next vowel (aeiou becomes eioua) 
-# each consonant becomes the .next consonant in the alphabet (so b becomes c, f becomes g, etc)
-# print the final encrypted name.
+#Takes a STRING as a name.
+#Swaps the first and last name
+#Change all vowels to next vowel in 'aeiou' by 
+	#ITERATING through and refering to the VOWEL INDEX
+#Change each consonant to the .next in the alphabet 
+#Keep in mind SPACES
+#So, "Waleeta Canon" would become "Depup Xemiive"
 
-#defines a method that takes a name, reverses it, prints it, splits the name into chars, prints the class (array), 
-#map!s each letter to the next letter of the alphabet, stores it in a new variable
-def encrypt
-	p "Please give me your first and last name"
-	name = gets.chomp.to_s.downcase
-	name.reverse!
-	p name
-	new_name = name.split("")
-	p new_name.class
-	p new_name.map! {|letter| letter.next }
-	#p new_name.class
-	p final_name = new_name.join("")
+def alias_maker(name)
+	name.downcase!
+	new_name = name.split(" ") #Array 
+	new_name.reverse! #reversed Array 
+	reversed_name = new_name.join(" ")
+	reversed_name.split("")
+	reversed_array = reversed_name.each_char.to_a 
+	reversed_array.map! do |letter|
+			letter = letter.next 
+	end 
+	alias_string = reversed_array.join("")
+	
 end 
 
-#Prompts user for input
-p "Would you like to give a first/last name, or quit?"
-answer = gets.chomp.downcase
+puts "Please keep giving me a first and last name, or type 'quit' to end the program: "
+name = gets.chomp.downcase 
 
-#creates loop
-until answer == "quit"
-	encrypt
-	p "Would you like to give a first/last name, or quit?"
-	answer = gets.chomp.downcase
+fake_names = []
 
-end
+until name == "quit"
+fake_names << alias_maker(name)
+name = gets.chomp 
+end 
 
-#ends the loop with "quit"
-if answer == "quit" 
-	puts "Thank you, bye."
-end
-
-	
-
-#This code does not meet the vowel criteria
-
-
-
+p fake_names
