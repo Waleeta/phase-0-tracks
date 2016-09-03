@@ -7,27 +7,45 @@
 #So, "Waleeta Canon" would become "Depup Xemiive"
 
 def alias_maker(name)
-	name.downcase!
-	new_name = name.split(" ") #Array 
-	new_name.reverse! #reversed Array 
-	reversed_name = new_name.join(" ")
-	reversed_name.split("")
-	reversed_array = reversed_name.each_char.to_a 
-	reversed_array.map! do |letter|
-			letter = letter.next 
+	vowels = "aeiou" 
+	consonant = "bcdfghjklmnpqrstvwxyz"
+	new_name = ""
+	name.each_char do |letter|
+		if vowels.include?(letter) #if the letter = vowel, make a new letter 
+			new_letter = vowels[vowels.index(name[letter]) +1] #index of vowels, find the letter in the name, and increment by 1 in the VOWEL index. Ruby reads block methods right to left. So >> [vowels.index(name[letter]) +1] needs to evaluate to a number(index)
+			new_name << new_letter
+		elsif 
+			consonant.include?(letter)
+			new_letter = consonant[consonant.index(name[letter]) +1]
+			new_name << new_letter
+		elsif 
+			name[letter] == " "
+			new_name <<	name[letter]
+		end
 	end 
-	alias_string = reversed_array.join("")
-	
+	new_name = new_name.split(" ")
+	new_name.reverse!
+	new_name = new_name.join(" ")
 end 
+
+
 
 puts "Please keep giving me a first and last name, or type 'quit' to end the program: "
 name = gets.chomp.downcase 
 
-fake_names = []
+fake_names = {}
 
 until name == "quit"
-fake_names << alias_maker(name)
+fake_names[name] = name 
+fake_names[name] = alias_maker(name)
 name = gets.chomp 
 end 
 
-p fake_names
+fake_names.map do |original_name, alias_name|
+	puts "#{original_name} became #{alias_name}"
+end 
+
+	
+
+	
+
