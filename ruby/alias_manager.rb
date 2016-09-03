@@ -7,8 +7,8 @@
 #So, "Waleeta Canon" would become "Depup Xemiive"
 
 def alias_maker(name)
-	vowels = "aeiou" 
-	consonant = "bcdfghjklmnpqrstvwxyz"
+	vowels = "aeioua" 
+	consonant = "bcdfghjklmnpqrstvwxyzb"
 	new_name = ""
 	name.each_char do |letter|
 		if vowels.include?(letter) #if the letter = vowel, make a new letter 
