@@ -2,20 +2,24 @@
 #Method should return the index of the item (or NIL if it doesn't exist)
 #Cannot use .index 
 
-
-
+#Iterates using a "position counter", and returns the count when int is found:
 def search_array(item1, int)
-	if item1.include?(int)
-		p item1.index(int)
-	else
-		return false 
-	end 
-	
+  position_count = 0 
+  item1.each do |index|
+    if int == index 
+      return position_count
+    else 
+      false
+    end   
+  position_count +=1  
+  end 
 end
 
-#DRIVER CODE:
+item1 = [2,65,453,34,123,6,88,0,4, 19, 7765]
 
-search_array([3, 6, 19, 33, 4, 23], 19)
+#DRIVER CODE:
+p search_array(item1, 7765)
+
 
 #Define a new method that takes in an int 
 #Should return an array of terms of Fibonacci numbers
