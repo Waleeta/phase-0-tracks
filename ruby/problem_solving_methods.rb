@@ -41,3 +41,45 @@ def fib(num)
 end
 
 fib(6)
+
+#SORTING METHOD: 
+
+#Sort through an array by looking at each number and moving the smallest number all the way to the left until we 
+  #are left with the biggest number on the right. 
+#The loop would have to return the smallest number to a new array each time. 
+#It would find the smallest number by comparing each one to the other numbers in the array.
+
+#This code isn't DRY or refactored - but time is almost up to hand it in. It works though!
+
+#Define whatever array of numbers you'd like: 
+array1 = [2,7,20,41,89,3,19,15,6]
+
+def sort_array(array1)
+  
+first_array = []
+second_array = []
+third_array = []
+array_final = []
+
+#adds the LOWEST value number then deletes it.
+array1.each do 
+  first_array << array1.min 
+  array1.delete(array1.min)
+end 
+
+array1.each do 
+  second_array << array1.min 
+  array1.delete(array1.min)
+end 
+
+array1.each do 
+  third_array << array1.min 
+  array1.delete(array1.min)
+  third_array << array1.max
+end
+  array_final << first_array + second_array + third_array
+end 
+
+sort_array(array1)
+
+
