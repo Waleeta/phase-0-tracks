@@ -1,85 +1,80 @@
-class Puppy
+# class Puppy
 
-#Fetch method 
-  def fetch(toy)
-    puts "I brought back the #{toy}!"
-  end
- 
- #Speak method 
-		def speak(i)
-		index = 0 
-		until index == i 
-		puts "Woof!"
-		index += 1 
-	end 
-	end
+# 	def initialize
+# 		puts "initializing new puppy instance...."
+# 	end 
 
-#Roll Over method 
-	def roll_over
-    puts "*rolls over*"
-  end
-  
-#Dog Years method 
-	def dog_years(i)
-		p i / 7
-	end 
-	
-#Sneaks food 
-	def sneaks(food)
-		puts "You're not supposed to eat #{food}!"
-	end
-	
-end
+# 	def fetch(toy) 
+# 		puts "I brought back the #{toy}!"
+# 	end 
 
-rosie = Puppy.new 
+# 	def roll_over
+# 		puts "*rolls over*"
+# 	end
+
+# 	def puppy_age(integer)
+# 		age = integer / 7
+# 		age
+# 	end 
+
+# 	def barks
+# 		puts "Woof woof!"
+# 	end 
+
+# end 
 
 
-rosie.fetch("ball")
-rosie.speak(3)
-rosie.roll_over
-rosie.dog_years(32)
-rosie.sneaks("chocolate")
+class Waitress 
 
-
-class Gymnast
-#Initialize method 
-	def initialize
-		print "Initializing new Gymnast instance..."
+	def initialize(name)
+		@name = name 
+		@annoyed = false
+		puts "initalizing #{@name}"
 	end 
 
-#Gymnast Name method: 
-	def gymnast_name(name)
-		puts "Hello, my name is #{name}, I'm a gymnast!"
+	def annoyed
+		@annoyed = true
 	end 
 
-#Gymnast age method: 
-	def gymnast_age(age)
-		print "I am #{age} years old."
+	def tips_earned(integer)
+		if integer >= 50 
+			@annoyed = false 
+			puts "I earned $#{integer} today. I can pay my bills."
+		else 
+			@annoyed = true 
+			puts "I can't believe I only earned $#{integer} today. Cheapskates."
+		end 
 	end 
 
 end 
 
-athlete = Gymnast.new 
 
-#Create an empty array 
-gymnast_array = []
+waitress = Waitress.new("Lisa-Marie")
 
-#create a loop to make 50 instances to store in empty array 
-	index = 0 
-	until index == 51 
-	coach = Gymnast.new
-	gymnast_array << coach
-	index += 1 
-	end 
-	
-	puts gymnast_array
+waitress.tips_earned(34)
+p waitress
 
 
-#iterate over gymnast_array
-#call .age for each instance
-gymnast_array.each do |athlete| 
-	puts athlete.gymnast_age(10)
-end 
 
-#calls age method 
-athlete.gymnast_age(16)
+
+
+
+
+
+
+
+
+
+#DRIVER CODE
+
+# rosie = Puppy.new
+# vernon= Puppy.new 
+
+# p rosie.fetch("ball")
+# p vernon.fetch("squeaky lamb")
+# p rosie.roll_over
+# p vernon.roll_over
+# p rosie.puppy_age(36)
+# p vernon.puppy_age(45)
+# p rosie.barks 
+# p vernon.barks
