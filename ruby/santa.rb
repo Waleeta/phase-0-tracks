@@ -1,86 +1,88 @@
-class Santa
-	attr_reader :gender, :age, :eyecolor, :ethnicity, :reindeer_ranking 
-	attr_accessor :gender, :age, :eyecolor
-	
-#Initialize method
-	def initialize(gender, ethnicity, eyecolor)
-		@gender = gender 
+class Santa 
+
+	def initialize(gender, ethnicity)
+		@gender = gender
 		@ethnicity = ethnicity
-		@eyecolor = eyecolor
-		@age = 0
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-	end
+		@age = 0
+		@beard_length = 0 
+		@naughty = false 
+	end 
 
-#Speak method
 	def speak
-		puts "Ho, ho, ho! Merry Christmas!"
-	end
+		puts "Ho ho hoooo...Merry Christmas!"
+	end 
 
-#Milk and Cookies method:
 	def eat_milk_and_cookies(cookie)
-		puts "That was a good #{cookie} cookie! "
-	end
-
-#Check attributes method:
-	def about
-		puts "Gender: #{@gender}"
-		puts "Ethnicity: #{@ethnicity}"
-		puts "Eye color: #{@eyecolor}"
-		puts "Age is: #{@age}"
+		puts "That was a good #{cookie} cookie!"
 	end
 	
-#Celebrate Birthday method
-	def celebrate_birthday(age)
-		age = age + 1 
-	end
-#Gets mad at method 
-	def get_mad_at(reindeer)
-		reindeer_ranking.delete(reindeer)
-		reindeer_ranking.push(reindeer)
+	def beard_length(inches)
+		@beard_length = inches
 	end 
 	
-end
-
-#Driver Code:
-	# santa = Santa.new("female", "black", "green") 
-	# santa.about
-	# santa.speak 
-	# santa.eat_milk_and_cookies("chocolate")
-	# santa.about
-
-santas = []
-
-genders = ["female", "male", "transgender", "gender-fluid", "cis", "None"]
-ethnicities = ["Black", "Middle-Eastern", "South Asian", "Pacific-Islander", "Indigenous American", "East Asian"]
-eye_colors = ["grey", "brown", "hazel", "blue", "green", "purple"]
-
-
-10.times do |add|
-	santas << Santa.new(genders.sample(random: genders)[add], ethnicities.sample(random: ethnicities)[add], eye_colors.sample(random: eye_colors)[add])
+	def decides_if_naughty
+	  	if @beard_length >= 10 
+	  		@naughty
+	  	else 
+	  		@naughty = true 
+	  	end
+	  end 
+	  
+	  def celebrate_birthday(age)
+	
+		end 
+		
+	def about 
+		puts "Gender: #{@gender}."
+		puts "Ethnicity: #{@ethnicity}."
+		puts "Age: #{@age}: "
+		puts "Beard length: #{@beard_length} inches."
+		puts "Thinks you're naughty: #{@naughty}."
+		puts "---------------------------------------------------"
+	end 
 end 
 
-p santas[9]
+gender_sample = ["female", "male", "agender", "transgender", "polygender", "prefer not to answer"]
+ethnicity_samples = ["Black", "South Asian", "East Asian", "Latino", "Caucasian", "Middle Eastern", "Indigenous American"]
+beard_sample = [5, 7, 2, 30, 6, 3, 100, 10, 24, 11]
 
-santa = Santa.new("female", "white", "blue")
-santa.age = 40
-p santa
-santa.celebrate_birthday(40)
-p santa.age
-p santa.about
+#Driver Code:
 
-santa = Santa.new("trans", "orange", "white")
-santa.age = 69
-p santa
-santa.celebrate_birthday(69)
-p santa.age
-p santa.about
+santas = []
+10.times do 
 
-santas << Santa.new("female", "Black", "grey")
-santas << Santa.new("male", "Middle-Eastern", "brown")
-santas << Santa.new("transgender", "South Asian", "hazel")
-santas << Santa.new("gender-fluid", "Pacific-Islander", "blue")
-santas << Santa.new("cis", "Indigenous American", "green")
-santas << Santa.new("None", "East Asian", "purple")
-p santas
+santas << Santa.new(gender_sample.sample, ethnicity_samples.sample)
+end 
+
+santas.each do |santa|
+	santa.beard_length(beard_sample.sample)
+end 
+
+santas.each do |santa|
+	santa.decides_if_naughty
+end 
+
+santas.each do |santa|
+	santa.about 
+end 
 
 
+
+
+	
+
+
+
+
+	
+
+
+
+
+
+
+
+# santa = Santa.new 
+# p santa.speak
+# p santa.eat_milk_and_cookies("chocolate chip")
