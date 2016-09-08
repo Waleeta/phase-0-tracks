@@ -48,12 +48,44 @@ p grocery_list
 # steps: delete using string (item name) 
 # output: updated hash with item deleted
 
+def remove_item (item, grocery_list)
+	grocery_list.delete(item)
+	grocery_list
+end 
+
+#Driver code for remove_item
+p grocery_list
+remove_item("carrots", grocery_list)
+p grocery_list
+
+
 # Method to update the quantity of an item
 # input: item (string) and an updated value
 # steps: set the item (string) to equal a new value
 # output: updated hash with each {item: quantity} that reflects the updated quantity of item
 
+def update_quantity(item, quantity, grocery_list)
+	grocery_list[item] = quantity
+	grocery_list
+end 
+
+#Driver code for update_quantity
+p grocery_list
+update_quantity("juice", 9, grocery_list)
+p grocery_list
+
 # Method to print a list and make it look pretty
 # input: No input, just a method call
 # steps: iterate through the hash and return each key value pair as a list (puts)
 # output: a neatly printed list with the item: quantity. 
+
+def print_grocery_list(grocery_list)
+	puts "Here is your current list:"
+	grocery_list.each do |item, quantity|
+	puts "#{item}: #{quantity} needed."	
+	end
+end 
+
+#Driver Code for printing grocery list
+
+print_grocery_list(grocery_list)
