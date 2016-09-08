@@ -24,23 +24,32 @@ p search_array(item1, 7765)
 #Define a new method that takes in an int 
 #Should return an array of terms of Fibonacci numbers
 #Method should do int.times add the next number to the previous number 
-
-
-def fib(num)
-  fib_array = []
-  num1 = 0 #assigning num1 to equal 0
-  num2 = 1 #assigning num2 to equal 1
+#first, create an empty array to "catch" each number. Set index to int number (-1) and each 
+  #iteration should push into the array the current index number plus the previous index number in the array.
+#Logic: 
+  # final_array[2] = final_array[0] + final_array[1]
+  # final_array[3] = final_array[1] + final_array[2]
+  # final_array[4] = final_array[2] + final_array[3]
+  # final_array[5] = final_array[3] + final_array[4]
   
-  num.times do #iterating through each number 5 times 
-  	new_num = num1 
-  	fib_array << num1 = num2 
-  	
-  	num2 = new_num + num1
-  end
-  return fib_array
-end
+#if int = 6, should return [0,1,1,2,3,5]
 
-fib(6)
+def fib(int)
+  index = 1 
+  final_array = [0,1]
+    if int == 1 
+      final_array.delete_at(0)
+      final_array
+    end 
+  while index < int -1 
+    final_array << final_array[index-1]+final_array[index]
+    index += 1 
+  end
+  final_array
+end
+  
+p fib(10)
+p fib(6)
 
 #SORTING METHOD: 
 
