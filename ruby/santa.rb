@@ -66,8 +66,21 @@ p santa.gets_mad_at("Donner")
 #CHECKS SANTA'S CELEBRATE BIRTHDAY METHOD: 
 p santa.celebrate_birthday(45)
 
+#WITHOUT STORING SANTAS: 
+60.times do 
+santa = Santa.new(gender_sample.sample, ethnicity_samples.sample)
+santa.beard_length(beard_sample.sample)
+santa.decides_if_naughty
+santa.age = rand(0...140)
+p santa.ethnicity 
+p santa.beard_inches
+p santa.age 
+santa.about 
+end 
+
+#CREATE A BUNCH OF SANTAS
 santas = []
-5.times do 
+60.times do 
 santas << Santa.new(gender_sample.sample, ethnicity_samples.sample)
 end 
 
