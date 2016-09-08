@@ -13,12 +13,10 @@
 # output: the output will likely be a hash {item: quantity}
 
 def create_list(items_string)
-	items_array = []
+	items_array = items_string.split(" ")
 	grocery_list = {}
-	items_array << items_string.split(" ")
-	items_array.flatten!
 		items_array.each do |item|
-			grocery_list[item] = 0 
+			grocery_list[item] = 1 
 		end 
 	grocery_list
 end 
