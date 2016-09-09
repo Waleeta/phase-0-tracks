@@ -73,3 +73,40 @@ end
 
 grocery_list = create_list("apples pears oranges")
 print_list(grocery_list)
+
+
+# What did you learn about pseudocode from working on this challenge?
+	#It is very helpful in thinking through the problem from beginning to end. I can see where you can avoid mistakes if
+		#you take your time pseudocoding.
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+	#hashes are the easiest way to store this type of list - arrays weren't really necessary. 
+
+# What does a method return?
+	# the last thing that is returned in the method is what any method will return. If you need a final, updated hash
+		#from a method, then you must return the hash as the last line.
+
+# What kind of things can you pass into methods as arguments?
+	#strings, integers, other methods, other methods with their own parameters.
+
+# How can you pass information between methods?
+	#You can pass existing, populated hashes and arrays into method parameters so they can be used
+		#throughout the method. Don't forget to return it if you want it updated and if you use that method
+			#to pass the updated has!
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+	#Pretty much all of the above were solidified. I have a better understanding of how to share information
+		#between methods when variables are not global or available within the 'world' of a method.
+
+
+
+
+
+
+
+
+
+
+
+
+
