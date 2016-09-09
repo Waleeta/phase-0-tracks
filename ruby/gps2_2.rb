@@ -26,6 +26,13 @@ grocery_list.merge!(create_list("apples pears oranges"))
 # steps: push items and their quantities into the empty hash
 # output: hash
 
+def adds_item(item, quantity, grocery_list)
+	grocery_list[item] = quantity
+end 
+
+adds_item("eggs", 1, grocery_list)
+p grocery_list
+
 # Method to remove an item from the list
 # input: item
 # steps: delete the item by its name
