@@ -9,6 +9,18 @@
   	#we can create a different that prints the list with the items: quantities.
 # output: [hash]
 
+def create_list(items)
+	items_array = items.split(" ")
+	grocery_hash = {}
+	items_array.each do |item|
+		grocery_hash[item] = 1
+	end 
+	grocery_hash	
+end 
+
+grocery_list = {}
+grocery_list.merge!(create_list("apples pears oranges"))
+
 # Method to add an item to a list
 # input: item name and optional quantity
 # steps: push items and their quantities into the empty hash
