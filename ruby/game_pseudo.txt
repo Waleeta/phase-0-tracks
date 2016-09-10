@@ -1,0 +1,17 @@
+User1 will enter a word. 
+
+User2 will try to guess the word by:
+	entering one letter at a time
+	we check to see if the letter is included in the word given by user1.
+		if it is, find where in the word it is and insert it at that position.
+	otherwise, let them know it isn’t in the word and ask for a letter again. 
+
+After each correct guess of a letter, return the incomplete word with the letters in the right position. 
+
+We also want to keep a list of the letters given so the user knows what s/he has already guessed.
+
+We can give them a limit of 15 guesses. If they guess a letter twice, it doesn’t add to this count. 
+
+If the user’s response is to guess the whole word correctly, the game is over and they won, and they get a congratulations.
+
+If the user uses all of their guesses and don’t guess right (up to 15 total), then they get a negative message. 
