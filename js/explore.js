@@ -29,20 +29,20 @@ else {
 // var puppy = true;
 // var cute = true;
 
-// var puppy = true;
-// var cute = false;
+var puppy = true;
+var cute = false;
 
 // var puppy = false;
 // var cute = false;
 
-// if (puppy && cute) {
-// 	console.log("This puppy is suuuuuuuuper cute.");
-// } else if (puppy || cute) {
-// 	console.log("Well at least you're one or the other.");
-// } else {
-// 	console.log("Awwww...it's ok I still think you're adorable.");
+if (puppy && cute) {
+	console.log("This puppy is suuuuuuuuper cute.");
+} else if (puppy || cute) {
+	console.log("Well at least you're one or the other.");
+} else {
+	console.log("Awwww...it's ok I still think you're adorable.");
 	
-// }
+}
 
 
 
