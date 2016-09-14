@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 # class Puppy
 
 # 	def initialize
@@ -78,3 +80,4 @@ p waitress
 # p vernon.puppy_age(45)
 # p rosie.barks 
 # p vernon.barks
+>>>>>>> origin

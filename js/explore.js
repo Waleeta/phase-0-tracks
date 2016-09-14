@@ -1,11 +1,10 @@
-//declare a FUNCTION reverse.
-//the funtion should take a STRING as an ARGUMENT.
-//the function should LOOP THROUGH EACH letter starting from the last letter.
-// it should print each letter, from last to first. 
+//Takes a STRING as an argument for the FUNCTION.
+//counter should start being equal to the length of the string, and then count down until it reaches 0. 
+//print out each letter from last letter to first letter. 
 
-	function reverse(str) {
-		for (var i = str.length; i > -1; i-=1)
-	console.log(str[i]);
+function reverse(str) {
+		for (var index = str.length; index > -1; index--)
+	console.log(str[index]);
 
 }
 
@@ -13,14 +12,28 @@ reverse("waleeta");
 
 
 
+//BOOLEAN if else: try one, then the other. 
+//var annoyed = true;
+
+var annoyed = false;
+
+if (annoyed) {
+console.log("I am SUPER annoyed.");
+}
+else {
+	console.log("Nah I'm straight.");
+}
+
+
+
 // var puppy = true;
 // var cute = true;
 
-// var puppy = true;
-// var cute = false;
-
-var puppy = false;
+var puppy = true;
 var cute = false;
+
+// var puppy = false;
+// var cute = false;
 
 if (puppy && cute) {
 	console.log("This puppy is suuuuuuuuper cute.");
