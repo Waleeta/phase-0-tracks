@@ -12,10 +12,17 @@ reverse("waleeta");
 
 
 
+//BOOLEAN if else: try one, then the other. 
+//var annoyed = true;
 
+var annoyed = false;
 
-
-
+if (annoyed) {
+console.log("I am SUPER annoyed.");
+}
+else {
+	console.log("Nah I'm straight.");
+}
 
 
 
