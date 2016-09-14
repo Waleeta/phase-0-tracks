@@ -1,16 +1,17 @@
-Class:
-Puppy
+# Class: 
+# Puppy
 
-Characteristics: 
-cute
-cuddly 
-soft 
-warm
-sleepy
-playful
+# Characteristics (Attributes)
+# - Breed: varies
+# - fur color: varies
+# - name: varies
+# - age: between 0-20
+# - gender: male/female
 
-Behavior: 
-jumps
-snuggles
-naps
-nibbles
+# Behavior (Methods)
+# - Barks (true or false)
+# - speed: max 25 mph 
+# - cuddles: true or false
+# - fetches: true or false
+
+ 

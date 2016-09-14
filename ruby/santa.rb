@@ -1,86 +1,128 @@
-class Santa
-	attr_reader :gender, :age, :eyecolor, :ethnicity, :reindeer_ranking 
-	attr_accessor :gender, :age, :eyecolor
+class Santa 
 	
-#Initialize method
-	def initialize(gender, ethnicity, eyecolor)
-		@gender = gender 
+	attr_reader :age, :ethnicity, :beard_inches
+	attr_accessor :age
+
+	def initialize(gender, ethnicity)
+		@gender = gender
 		@ethnicity = ethnicity
-		@eyecolor = eyecolor
-		@age = 0
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-	end
+		@age = age
+		@beard_inches = 0 
+		@naughty = false 
+		end 
 
-#Speak method
 	def speak
-		puts "Ho, ho, ho! Merry Christmas!"
-	end
+		puts "Ho ho hoooo...Merry Christmas!"
+		end 
 
-#Milk and Cookies method:
 	def eat_milk_and_cookies(cookie)
-		puts "That was a good #{cookie} cookie! "
-	end
-
-#Check attributes method:
-	def about
+		puts "That was a good #{cookie} cookie!"
+		end
+	
+	def beard_length(inches)
+		@beard_inches = inches
+		end 
+	
+	def decides_if_naughty
+	  	if @beard_inches >= 20 
+	  		@naughty
+	  	else 
+	  		@naughty = true 
+	  		end
+	  	end 
+	  
+	def celebrate_birthday(age)
+			@age = age + 1 
+		end 
+		
+	def gets_mad_at(reindeer_name)
+		@reindeer_ranking.delete(reindeer_name)
+		@reindeer_ranking.insert(-1, reindeer_name)
+		end 
+		
+	def about 
 		puts "Gender: #{@gender}"
 		puts "Ethnicity: #{@ethnicity}"
-		puts "Eye color: #{@eyecolor}"
-		puts "Age is: #{@age}"
-	end
-	
-#Celebrate Birthday method
-	def celebrate_birthday(age)
-		age = age + 1 
-	end
-#Gets mad at method 
-	def get_mad_at(reindeer)
-		reindeer_ranking.delete(reindeer)
-		reindeer_ranking.push(reindeer)
-	end 
-	
-end
-
-#Driver Code:
-	# santa = Santa.new("female", "black", "green") 
-	# santa.about
-	# santa.speak 
-	# santa.eat_milk_and_cookies("chocolate")
-	# santa.about
-
-santas = []
-
-genders = ["female", "male", "transgender", "gender-fluid", "cis", "None"]
-ethnicities = ["Black", "Middle-Eastern", "South Asian", "Pacific-Islander", "Indigenous American", "East Asian"]
-eye_colors = ["grey", "brown", "hazel", "blue", "green", "purple"]
-
-
-10.times do |add|
-	santas << Santa.new(genders.sample(random: genders)[add], ethnicities.sample(random: ethnicities)[add], eye_colors.sample(random: eye_colors)[add])
+		puts "Age: #{@age} "
+		puts "Beard length: #{@beard_inches} inches"
+		puts "Thinks you're naughty: #{@naughty}"
+		puts "---------------------------------------------------"
+		end 
 end 
 
-p santas[9]
+gender_sample = ["female", "male", "agender", "transgender", "polygender", "prefer not to answer", "cis gender", 
+	"gender-less", "bigender", "androgynous", "gender-fluid", "transsexual"]
+ethnicity_samples = ["Black", "South Asian", "East Asian", "Latino", "Caucasian", "Middle Eastern", "Indigenous American", 
+	"of mixed and private race", "sub-Saharan African", "Central African", "North African", "Western European"]
+beard_sample = [5, 7, 2, 30, 6, 3, 100, 10, 24, 11, 18, 13, 45]
 
-santa = Santa.new("female", "white", "blue")
-santa.age = 40
-p santa
-santa.celebrate_birthday(40)
-p santa.age
-p santa.about
+#Driver Code:
+santa = Santa.new("female", "Black")
 
-santa = Santa.new("trans", "orange", "white")
-santa.age = 69
-p santa
-santa.celebrate_birthday(69)
-p santa.age
-p santa.about
+#CHECKS GET_MAT_AT METHOD: 
+p santa.gets_mad_at("Donner") 
 
-santas << Santa.new("female", "Black", "grey")
-santas << Santa.new("male", "Middle-Eastern", "brown")
-santas << Santa.new("transgender", "South Asian", "hazel")
-santas << Santa.new("gender-fluid", "Pacific-Islander", "blue")
-santas << Santa.new("cis", "Indigenous American", "green")
-santas << Santa.new("None", "East Asian", "purple")
-p santas
+#CHECKS SANTA'S CELEBRATE BIRTHDAY METHOD: 
+p santa.celebrate_birthday(45)
+
+#WITHOUT STORING SANTAS: 
+60.times do 
+santa = Santa.new(gender_sample.sample, ethnicity_samples.sample)
+santa.beard_length(beard_sample.sample)
+santa.decides_if_naughty
+santa.age = rand(0...140)
+p santa.ethnicity 
+p santa.beard_inches
+p santa.age 
+santa.about 
+end 
+
+#CREATE A BUNCH OF SANTAS
+santas = []
+60.times do 
+santas << Santa.new(gender_sample.sample, ethnicity_samples.sample)
+end 
+
+#ADDS RANDOM BEARD LENGTH FROM LIST: 
+santas.each do |santa|
+	santa.beard_length(beard_sample.sample)
+end 
+
+#UPDATES AND STORES WHETHER YOU'RE ON THE NAUGHTY LIST:
+santas.each do |santa|
+	santa.decides_if_naughty
+end 
 
 
+#CHECK SETTERS: 
+#CHANGES SANTA'S AGE TO A RANDOM AGE BETWEEN 0-140:
+santas.each do |santa|
+	santa.age = rand(0...140)
+end 
+
+#CHECK GETTERS: 
+santas.each do |santa|
+	p santa.age 
+end 
+
+santas.each do |santa|
+	p santa.ethnicity
+end 
+
+santas.each do |santa|
+	p santa.beard_inches
+end 
+
+#AND FINALLY, RETURNS ALL OF OUR SANTA INFORMATION: 
+
+santas.each do |santa|
+	santa.about 
+end 
+
+#PREVIOUS DRIVER CODE FOR METHODS:
+
+
+santa = Santa.new("male", "East Asian") 
+puts santa.speak
+puts santa.eat_milk_and_cookies("chocolate chip")
