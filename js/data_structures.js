@@ -1,46 +1,39 @@
-var horse_names = ["Ed", "Secretariat", "Mike", "Roger"];
-var colors = ["red", "blue", "yellow", "green"];
+var horse_colors = ["brown", "grey", "white", "auburn"];
+var horse_names = ["Ed", "Secretariat", "Squirrel the Horse", "Black Beauty"];
 
-colors.push("purple");
-horse_names.push("Jennifer");
+horse_colors.push("cream");
+horse_names.push("Magic");
 
-//Create a new OBJECT that takes COLORS as PROPERTIES, and HORSE_NAMES as values
-//should take any number of elements as long as two arrays match in LENGTH.
+var horse_object = {};
 
-var horses = {};
-
-//Setting counter (index) to 0, while the counter is less then the array .length, we increment +1;
-//setting our empty object to include property HORSE_NAME(at its index) with corresponding value COLORS at 
-//index.
-
-for (var index = 0; index < horse_names.length; index ++) {
-	horses[horse_names[index]] = colors[index];
+for (var index = 0; index <= horse_colors.length; index++) {
+	horse_object[horse_names[index]] = horse_colors[index];
+	horse_object;
 }
 
-console.log(horses);
 
+//DRIVER CODE: 
+console.log(horse_object);
 
-//Write constructor function for a CAR.
-//Give it a few properties (MAKE, MODEL, YEAR)
-// Give it at least one function()
-// Create a few cars with it.
+function Car(year, make, model) {
+console.log("Our new car: ", this);
 
-//var car = {make: , model: , year: };
+this.year = year;
+this.make = make;
+this.model = model;
 
-function Car(make, model, year) {
-	this.make = make;
-	this.model = model;
-	this.year = year;
+this.honk = function() {console.log("*HONK HONK*"); };
 
-this.honk = function() { console.log("*HONK HONK*"); };
+console.log("New car made.");
 
-console.log("CAR INITIALIZATION COMPLETE");
 }
 
-var another_car = new Car("Toyota", "Yaris", 2009);
-console.log(another_car);
-another_car.honk(); 
 
-var yet_another_car = new Car("Toyota", "RAV4", 2006);
-console.log(yet_another_car);
-yet_another_car.honk();
+#DRIVER CODE: 
+var car1 = new Car ("2001", "Kia", "Rio");
+console.log(car1);
+console.log(car1.honk());
+
+var car2 = new Car ("2009", "Toyota", "Yaris");
+console.log(car2);
+console.log(car2.honk());
