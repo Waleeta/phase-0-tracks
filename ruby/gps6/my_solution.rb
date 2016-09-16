@@ -98,3 +98,14 @@ end
 
 # #=======================================================================
 # # Reflection Section
+#STATE_DATA is a constant, meaning it is meant to be un-changed and will issue a warning if changes are attempted. The nested hashes within STATE_DATA
+  #are symbols, also indicating they should not be changed but are expected to remain constant.
+#Require_relative will include a file in the same directory. Require would mean you would have to refer to the whole directory.
+#.map(!), .each are the most common. 
+#The variables for virus_effects were all instance variables, which is the first thing I noticed. Ultimately they were not necessary because they are visivle throughout the class.
+#The scope of instance variables and how they are used became clearer. Instance variables are visible throughout the class and are given values upon each instance 
+  #initialization, which means after initialization, they do not necessarily need to be passed into methods as parameters again (in methods within the class), 
+    #because you can jsut refer to them in the actual method code.
+
+
+
