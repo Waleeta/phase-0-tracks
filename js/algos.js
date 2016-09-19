@@ -62,5 +62,5 @@ console.log(array2[0]);
 
 
 //DRIVER CODE TO BUILD ARRAY
-build_array(5); 
-build_array(8); 
+build_array(5); //returns random string of 5 letters
+build_array(8); //returns random string of 8 letters.
