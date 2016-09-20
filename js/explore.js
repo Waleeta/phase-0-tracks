@@ -3,9 +3,10 @@
 //print out each letter from last letter to first letter. 
 
 function reverse(str) {
-		for (var index = str.length; index > -1; index--)
-	console.log(str[index]);
-
+    var new_word = "";
+        for (var index = str.length-1; index >= 0; index--)
+            new_word += str[index];
+            return new_word
 }
 
 reverse("waleeta");
