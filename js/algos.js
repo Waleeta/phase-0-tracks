@@ -38,11 +38,12 @@ function build_array(integer) {
 	var alphabet = "abcdefghijklmnopqrstuvwxyz";
 	var word_array = [];
 	var word = "";
-	for (var index = 0; index < integer; index++) {
-	word += alphabet.charAt(Math.random() * alphabet.length);
-	}
-	word_array.push(word)
-	console.log(word_array);
+	for (var i = 0; i < integer; i++) {
+		word += alphabet.charAt(Math.floor((Math.random() * 10) + 1) * alphabet.length);
+		word;
+		word_array.push(word);
+		}
+	return word_array;
 }
 
 
