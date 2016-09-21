@@ -1,0 +1,90 @@
+1. SELECT * FROM chicago_coffee_shops;
+
+1|Wicker Park|4000|Damen and North|60622|2
+2|Ukrainian Village|3500|Grand and Oakley|60647|1
+3|Rogers Park|7500|Granville and Clark|60626|3
+4|Garfield Park|3500|Washington and Lake|60612|3
+5|Lincoln Square|4500|Lawrence and Western|60625|2
+6|Old Irving|9000|Irving and Ashland|60618|2
+7|Edgewater|6000|Broadway and Lawrence|60660|1
+8|Bridgeport|5600|35th and Racine|60642|1
+9|River North|7800|Halsted and Hubbard|60608|2
+10|The Loop|9000|Madison and Michigan|60603|1
+
+
+2. UPDATE chicago_coffee_shops SET zip_code = 90210 WHERE neighborhood="Wicker Park";
+SELECT * FROM chicago_coffee_shops;
+
+1|Wicker Park|4000|Damen and North|90210|2
+2|Ukrainian Village|3500|Grand and Oakley|60647|1
+3|Rogers Park|7500|Granville and Clark|60626|3
+4|Garfield Park|3500|Washington and Lake|60612|3
+5|Lincoln Square|4500|Lawrence and Western|60625|2
+6|Old Irving|9000|Irving and Ashland|60618|2
+7|Edgewater|6000|Broadway and Lawrence|60660|1
+8|Bridgeport|5600|35th and Racine|60642|1
+9|River North|7800|Halsted and Hubbard|60608|2
+10|The Loop|9000|Madison and Michigan|60603|1
+
+3. SELECT * FROM chicago_coffee_shops, cafe_names WHERE chicago_coffee_shops.coffee_id = cafe_names.id;
+
+1|Wicker Park|4000|Damen and North|90210|2|2|Intelligentsia
+2|Ukrainian Village|3500|Grand and Oakley|60647|1|1|Starbucks
+3|Rogers Park|7500|Granville and Clark|60626|3|3|Independent
+4|Garfield Park|3500|Washington and Lake|60612|3|3|Independent
+5|Lincoln Square|4500|Lawrence and Western|60625|2|2|Intelligentsia
+6|Old Irving|9000|Irving and Ashland|60618|2|2|Intelligentsia
+7|Edgewater|6000|Broadway and Lawrence|60660|1|1|Starbucks
+8|Bridgeport|5600|35th and Racine|60642|1|1|Starbucks
+9|River North|7800|Halsted and Hubbard|60608|2|2|Intelligentsia
+10|The Loop|9000|Madison and Michigan|60603|1|1|Starbucks
+
+4. SELECT chicago_coffee_shops.neighborhood, cafe_names.name FROM chicago_coffee_shops JOIN cafe_names ON chicago_coffee_shops.coffee_id = cafe_names.id;
+
+Wicker Park|Intelligentsia
+Ukrainian Village|Starbucks
+Rogers Park|Independent
+Garfield Park|Independent
+Lincoln Square|Intelligentsia
+Old Irving|Intelligentsia
+Edgewater|Starbucks
+Bridgeport|Starbucks
+River North|Intelligentsia
+The Loop|Starbucks
+
+4. DELETE FROM chicago_coffee_shops WHERE neighborhood="The Loop";
+SELECT * FROM chicago_coffee_shops;
+
+1|Wicker Park|4000|Damen and North|90210|2
+2|Ukrainian Village|3500|Grand and Oakley|60647|1
+3|Rogers Park|7500|Granville and Clark|60626|3
+4|Garfield Park|3500|Washington and Lake|60612|3
+5|Lincoln Square|4500|Lawrence and Western|60625|2
+6|Old Irving|9000|Irving and Ashland|60618|2
+7|Edgewater|6000|Broadway and Lawrence|60660|1
+8|Bridgeport|5600|35th and Racine|60642|1
+9|River North|7800|Halsted and Hubbard|60608|2
+
+5. SELECT neighborhood, zip_code FROM chicago_coffee_shops INNER JOIN cafe_names ON chicago_coffee_shops.coffee_id=cafe_names.id;
+
+Wicker Park|90210
+Ukrainian Village|60647
+Rogers Park|60626
+Garfield Park|60612
+Lincoln Square|60625
+Old Irving|60618
+Edgewater|60660
+Bridgeport|60642
+River North|60608
+
+6. SELECT cross_streets, population FROM chicago_coffee_shops INNER JOIN cafe_names ON chicago_coffee_shops.coffee_id = cafe_names.id;
+
+Damen and North|4000
+Grand and Oakley|3500
+Granville and Clark|7500
+Washington and Lake|3500
+Lawrence and Western|4500
+Irving and Ashland|9000
+Broadway and Lawrence|6000
+35th and Racine|5600
+Halsted and Hubbard|7800
