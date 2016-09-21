@@ -1,0 +1,68 @@
+SCHEMA:
+
+CREATE TABLE businesses (
+id INTEGER PRIMARY KEY,
+name VARCHAR(255)
+);
+CREATE TABLE users (
+id INTEGER PRIMARY KEY,
+first_name VARCHAR(255),
+last_name VARCHAR(255)
+);
+
+CREATE TABLE reviews (
+id INTEGER PRIMARY KEY,
+stars INT,
+comment VARCHAR(255),
+business_id INT,
+user_id INT,
+FOREIGN KEY (business_id) REFERENCES businesses(id),
+FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+TABLES:
+sqlite> SELECT * FROM businesses;
+1|Grundy Hollow Wedding Chapel
+2|Amir's Towing
+3|The Beagle's Nightclub
+4|Lotus Yoga
+5|Plumbing by Janet
+6|Sushi World
+7|JoeBob's Sportz Barn
+
+
+sqlite> SELECT * FROM users;
+1|Bradford|Pitt
+2|Mandy|Kaling
+3|Angela|Jolie
+4|Steven|Wonder
+5|Holly|Berry
+6|Merryl|Streepman
+7|Denzel|George
+
+sqlite> SELECT * FROM reviews;
+1|4|It's great!|4|6
+2|3|Meh, I might go back|3|7
+3|1|They scratched up my car|2|2
+4|5|Delicious!|6|2
+5|3|Loud, obnoxious, too many sportz bros|7|5
+6|4|Fantastic food, great atmosphere|6|3
+7|4|Great work on my plumbing|5|4
+8|2|Sushi was ok|6|6
+
+SELECT * FROM users, businesses, reviews WHERE businesses.id=reviews.business_id AND users.id = reviews.user_id;
+
+6|Merryl|Streepman|4|Lotus Yoga|1|4|It's great!|4|6
+7|Denzel|George|3|The Beagle's Nightclub|2|3|Meh, I might go back|3|7
+2|Mandy|Kaling|2|Amir's Towing|3|1|They scratched up my car|2|2
+2|Mandy|Kaling|6|Sushi World|4|5|Delicious!|6|2
+5|Holly|Berry|7|JoeBob's Sportz Barn|5|3|Loud, obnoxious, too many sportz bros|7|5
+3|Angela|Jolie|6|Sushi World|6|4|Fantastic food, great atmosphere|6|3
+4|Steven|Wonder|5|Plumbing by Janet|7|4|Great work on my plumbing|5|4
+6|Merryl|Streepman|6|Sushi World|8|2|Sushi was ok|6|6
+
+SELECT * FROM users, businesses, reviews WHERE businesses.id=6 AND reviews.business_id=6 AND users.id = reviews.user_id;
+
+2|Mandy|Kaling|6|Sushi World|4|5|Delicious!|6|2
+3|Angela|Jolie|6|Sushi World|6|4|Fantastic food, great atmosphere|6|3
+6|Merryl|Streepman|6|Sushi World|8|2|Sushi was ok|6|6
