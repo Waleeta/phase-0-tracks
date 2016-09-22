@@ -1,0 +1,39 @@
+2. SELECT * FROM businesses, users, reviews; (RETURNS LONG LIST OF EACH USER/BUSINESS/REVIEW).
+
+2. Joined three tables ONLY on those who reviewed:
+
+SELECT * FROM businesses, users, reviews WHERE businesses.id = reviews.business_id AND users.id = reviews.user_id;
+
+3|The Beagle Nightclub|2|Mandy|Kaling|1|2|Music too loud, watered down drinks|3|2
+4|Lotus Yoga|4|Steven|Wonder|2|25|Sooooo relaxed|4|4
+2|Amir's Towing|1|Bradford|Pitt|3|1|They scratched my car|2|1
+1|Grundy Hollow Wedding Chapel|3|Angela|Jolie|4|4|Great to take pictures there|1|3
+
+3. SELECT first_name, last_name, stars, comment FROM businesses, users, reviews WHERE businesses.id = reviews.business_id;
+
+Mandy|Kaling|2|Music too loud, watered down drinks
+Steven|Wonder|25|Sooooo relaxed
+Bradford|Pitt|1|They scratched my car
+Angela|Jolie|4|Great to take pictures there
+
+4. VARIOUS VERSIONS:
+
+SELECT name FROM businesses, users, reviews WHERE businesses.id=4 AND reviews.business_id=4;
+Lotus Yoga
+Lotus Yoga
+Lotus Yoga
+Lotus Yoga
+
+sqlite> SELECT name FROM businesses, users, reviews WHERE businesses.id=4 AND reviews.business_id=4 AND users.id = reviews.user_id;
+Lotus Yoga
+
+sqlite> SELECT name, comment FROM businesses, users, reviews WHERE businesses.id=4 AND reviews.business_id=4 AND users.id = reviews.user_id;
+Lotus Yoga|Sooooo relaxed
+
+sqlite> SELECT name, comment, first_name, stars FROM businesses, users, reviews WHERE businesses.id=4 AND reviews.business_id=4 AND users.id = reviews.user_id;
+Lotus Yoga|Sooooo relaxed|Steven|25
+
+sqlite> UPDATE reviews SET stars=5 WHERE stars=25;
+
+sqlite> SELECT name, comment, first_name, stars FROM businesses, users, reviews WHERE businesses.id=4 AND reviews.business_id=4 AND users.id = reviews.user_id;
+Lotus Yoga|Sooooo relaxed|Steven|5
