@@ -13,18 +13,30 @@ create_table_cmd = <<-SQL
 )
 SQL
 
+create_table_cmd = <<-SQL
+	CREATE TABLE IF NOT EXISTS users(
+		id INTEGER PRIMARY KEY,
+		name VARCHAR(255),
+		character_id INT,
+		FOREIGN KEY (character_id) REFERENCES futurama_characters(id)
+)
+SQL
+
+
 db.execute(create_table_cmd)
-# db.execute("INSERT INTO futurama_characters (name) VALUES ('Turanga Leela')")
-# db.execute("INSERT INTO futurama_characters (name) VALUES ('Bender Bending Rodriguez')")
-# db.execute("INSERT INTO futurama_characters (name) VALUES ('Phillip J Fry')")
+db.execute(create_table_cmd)
 
-futurama_characters = db.execute("SELECT * FROM futurama_characters") 
-#Checking class
-#p futurama_characters.class 
+puts "Give me your name: "
+user_name = gets.chomp.to_s
 
-#Trying a loop: 
-# futurama_characters.each do |character|
-# 	puts "#{character[1]} is here!"
+puts "Give me a number between 1-3"
+user_choice = gets.chomp.to_i
+
+def character_choice(db, user_choice, user_name)
+	db.execute("INSERT INTO users (name, character_id) VALUES ('#{user_name}', '#{user_choice}')")
+end 
+
+character_choice(db, user_choice, user_name)
 # end
 
 
@@ -33,36 +45,15 @@ futurama_characters = db.execute("SELECT * FROM futurama_characters")
 
 
 
+#DRIVER CODE: 
+# db.execute("INSERT INTO futurama_characters (name) VALUES ('Turanga Leela')")
+# db.execute("INSERT INTO futurama_characters (name) VALUES ('Bender Bending Rodriguez')")
+# db.execute("INSERT INTO futurama_characters (name) VALUES ('Phillip J Fry')")
+#futurama_characters = db.execute("SELECT * FROM futurama_characters") 
+#Checking class
+#p futurama_characters.class 
 
-
-
-
-
-# puts "What is your name: "
-# user_name = gets.chomp.to_s
-# #Name stored in a database: 
-
-# puts "Choose a character: Fry, Leela, Bender: "
-# character = gets.chomp.to_s.downcase 
-# #User and the character id they chose is stored in a database
-
-# db.execute("INSERT INTO futurama_users (name) VALUES (user_name)")
-
-# def futurama_characters(character)
-# 	if character == "bender"
-# 		puts "Well I hope your ('Faker::hacker.noun') is ok."
-# 	end
-# 	#If they choose Bender return something sarcastic.
-# 	#If they choose Leela, return a hacker sentence:
-# 	#If they choose Fry, return nonsense
-# end 
-
-# futurama_characters(character)
-
-
-# # 100.times do
-# #   create_kitten(db, Faker::Name.name, rand(0...20))
-# # end
-
-
-
+#Trying a loop: 
+# futurama_characters.each do |character|
+# 	puts "#{character[1]} is here!"
+# end
