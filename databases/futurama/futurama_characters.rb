@@ -2,6 +2,7 @@
 require 'sqlite3'
 require 'faker'
 
+#db is an Instance of Database class - can call methods on it
 db = SQLite3::Database.new("futurama.db")
 
 
@@ -13,13 +14,29 @@ create_table_cmd = <<-SQL
 SQL
 
 db.execute(create_table_cmd)
-db.execute("INSERT INTO futurama_characters (name) VALUES ('Turanga Leela')")
-db.execute("INSERT INTO futurama_characters (name) VALUES ('Bender Bending Rodriguez')")
-db.execute("INSERT INTO futurama_characters (name) VALUES ('Phillip J Fry')")
+# db.execute("INSERT INTO futurama_characters (name) VALUES ('Turanga Leela')")
+# db.execute("INSERT INTO futurama_characters (name) VALUES ('Bender Bending Rodriguez')")
+# db.execute("INSERT INTO futurama_characters (name) VALUES ('Phillip J Fry')")
 
 futurama_characters = db.execute("SELECT * FROM futurama_characters") 
-p futurama_characters.class 
-p futurama_characters
+#Checking class
+#p futurama_characters.class 
+
+#Trying a loop: 
+# futurama_characters.each do |character|
+# 	puts "#{character[1]} is here!"
+# end
+
+
+
+
+
+
+
+
+
+
+
 
 # puts "What is your name: "
 # user_name = gets.chomp.to_s
