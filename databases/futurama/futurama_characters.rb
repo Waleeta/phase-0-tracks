@@ -27,20 +27,30 @@ db.execute(create_table_cmd)
 db.execute(create_table_cmd)
 
 puts "Give me your name: "
-user_name = gets.chomp.to_s
+@user_name = gets.chomp.to_s
 
-puts "Give me a number between 1-3"
-user_choice = gets.chomp.to_i
+puts "Choose 1 for Leela, 2 for Bender, or 3 for Fry: "
+@user_choice = gets.chomp.to_i
 
 def character_choice(db, user_choice, user_name)
 	db.execute("INSERT INTO users (name, character_id) VALUES ('#{user_name}', '#{user_choice}')")
 end 
 
-character_choice(db, user_choice, user_name)
+character_choice(db, @user_choice, @user_name)
 # end
 
+def character_response(db)
+	if @user_choice == 1
+		puts "Leela says: "
+	elsif 
+		@user_choice == 2
+		puts "Bender says shut up."
+	else 
+		puts "Fry is..an idiot."
+	end 
+end
 
-
+character_response(db) 
 
 
 
