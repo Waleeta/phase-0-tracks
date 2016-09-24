@@ -8,15 +8,14 @@ db = SQLite3::Database.new("futurama.db")
 create_table_cmd = <<-SQL
 	CREATE TABLE IF NOT EXISTS futurama_characters(
 		id INTEGER PRIMARY KEY,
-		name VARCHAR(255),
-		character_id INT
+		name VARCHAR(255)
 )
 SQL
 
 db.execute(create_table_cmd)
-#db.execute("INSERT INTO futurama_characters (name) VALUES ('Turanga Leela')")
-# db.execute("INSERT INTO futurama_characters (name) VALUES ('Bender Bending Rodriguez')")
-# db.execute("INSERT INTO futurama_characters (name) VALUES ('Phillip J Fry')")
+db.execute("INSERT INTO futurama_characters (name) VALUES ('Turanga Leela')")
+db.execute("INSERT INTO futurama_characters (name) VALUES ('Bender Bending Rodriguez')")
+db.execute("INSERT INTO futurama_characters (name) VALUES ('Phillip J Fry')")
 
 futurama_characters = db.execute("SELECT * FROM futurama_characters") 
 p futurama_characters.class 
