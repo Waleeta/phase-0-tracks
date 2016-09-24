@@ -3,7 +3,7 @@ require 'sqlite3'
 require 'faker'
 
 db = SQLite3::Database.new("futurama.db")
-#db.execute("SELECT * FROM futurama_characters") 
+
 
 create_table_cmd = <<-SQL
 	CREATE TABLE IF NOT EXISTS futurama_characters(
@@ -14,18 +14,13 @@ create_table_cmd = <<-SQL
 SQL
 
 db.execute(create_table_cmd)
+#db.execute("INSERT INTO futurama_characters (name) VALUES ('Turanga Leela')")
+# db.execute("INSERT INTO futurama_characters (name) VALUES ('Bender Bending Rodriguez')")
+# db.execute("INSERT INTO futurama_characters (name) VALUES ('Phillip J Fry')")
 
-
-# create_table_cmd = <<-SQL
-#   CREATE TABLE IF NOT EXISTS futurama_users(
-#     id INTEGER PRIMARY KEY,
-#     name VARCHAR(255),
-#     character_id INT,
-#     FOREIGN KEY (character_id) REFERENCES (futurama_characters)
-#   )
-# SQL
-
-# db.execute(create_table_cmd)
+futurama_characters = db.execute("SELECT * FROM futurama_characters") 
+p futurama_characters.class 
+p futurama_characters
 
 # puts "What is your name: "
 # user_name = gets.chomp.to_s
