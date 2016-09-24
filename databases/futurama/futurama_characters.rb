@@ -75,6 +75,13 @@ end
 
 character_response(db) 
 
+#RETURNS EVERYONE WHO CHOSE BENDER.
+#BenderIsGreat
+
+futurama_characters = db.execute("SELECT users.name, futurama_characters.name FROM futurama_characters, users WHERE futurama_characters.id=2 AND users.character_id=2")
+puts futurama_characters
+
+
 
 
 
