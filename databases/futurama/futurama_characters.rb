@@ -5,6 +5,14 @@ require 'faker'
 db = SQLite3::Database.new("futurama.db")
 db.execute("SELECT * FROM futurama_characters") #Because this table exists, no errors.
 
+create_table_cmd = <<-SQL
+	CREATE TABLE users(
+		id INTEGER PRIMARY KEY,
+		name VARCHAR(255),
+		character_id INT,
+		FOREIGN KEY (character_id) REFERENCES (futurama_characters)
+		)
+SQL
 
 # create_table_cmd = <<-SQL
 #   CREATE TABLE IF NOT EXISTS futurama_users(
