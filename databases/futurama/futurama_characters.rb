@@ -39,14 +39,33 @@ end
 character_choice(db, @user_choice, @user_name)
 # end
 
+@bender_options = [
+	"Shut up meatbag.", 
+	"Shut up baby I know it.", 
+	"Kill all humans.", 
+	"Oh...your...God.",
+	"Hey sexy mama, wanna kill all humans?",
+	"This is the worst kind of discrimination there is: the kind against me!",
+	"I guess if you want children beaten, you have to do it yourself.",
+	"Hahahahaha. Oh wait you’re serious. Let me laugh even harder.",
+	"You know what cheers me up? Other people’s misfortune."]
+@fry_options = [
+	"So I really am important? How I feel when I'm drunk is correct?", 
+	"Huh. Did everything just taste purple for a second?",
+	"I prefer (tv) programs of the genre 'World's Blankiest Blank'.",
+	"Why am I sticky and naked? Did I miss something fun?",
+	"I'll be whatever I wanna do!"]
+
+
+
 def character_response(db)
 	if @user_choice == 1
-		puts "Leela says: "
+		puts "Leela says: I hope your " + Faker::Hacker.noun + " explodes, you " + Faker::Hacker.adjective + "."
 	elsif 
 		@user_choice == 2
-		puts "Bender says shut up."
+		puts @bender_options.sample
 	else 
-		puts "Fry is..an idiot."
+		puts @fry_options.sample
 	end 
 end
 
