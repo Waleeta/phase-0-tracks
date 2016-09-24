@@ -56,11 +56,15 @@ character_choice(db, @user_choice, @user_name)
 	"Why am I sticky and naked? Did I miss something fun?",
 	"I'll be whatever I wanna do!"]
 
-
+@leela_options = [
+	"idiot.",
+	"imbecile.",
+	"pile of human garbage.",
+	"monster."]
 
 def character_response(db)
 	if @user_choice == 1
-		puts "Leela says: I hope your " + Faker::Hacker.noun + " explodes, you " + Faker::Hacker.adjective + "."
+		puts "Leela says: I hope your " + Faker::Hacker.noun + " explodes, you #{@leela_options.sample}"
 	elsif 
 		@user_choice == 2
 		puts @bender_options.sample
