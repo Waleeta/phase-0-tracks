@@ -3,6 +3,7 @@ require 'sqlite3'
 require 'faker'
 
 db = SQLite3::Database.new("futurama.db")
+db.execute("SELECT * FROM futurama_characters") #Because this table exists, no errors.
 
 
 # create_table_cmd = <<-SQL
