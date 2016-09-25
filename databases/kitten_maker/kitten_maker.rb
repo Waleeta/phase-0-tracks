@@ -31,13 +31,22 @@ db.execute(create_table_cmd)
 
 # explore ORM by retrieving data
 kittens = db.execute("SELECT * FROM kittens")
-p kittens.class
-p kittens
+# p kittens.class
+# p kittens
+# kittens.each do |kitten|
+# 	puts "#{kitten['name']} is #{kitten['age']}."
+# end
 
 # add LOOOOTS of kittens!
 # so. many. kittens. 
 #KittenExplosion
+def create_kittens(db, name, age)
+	db.execute("INSERT INTO kittens (name, age) VALUES (?, ?)", [name, age])
+end
 
+9900.times do 
+	create_kittens(db, Faker::Name.name, rand(0..3))
+end 
 
 
 
