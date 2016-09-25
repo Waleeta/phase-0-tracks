@@ -26,9 +26,12 @@ SQL
 db.execute(create_table_cmd)
 
 # add a test kitten
-db.execute("INSERT INTO kittens (name, age) VALUES ('Bob', 3)")
+#db.execute("INSERT INTO kittens (name, age) VALUES ('Bob', 3)")
 
 # explore ORM by retrieving data
+kittens = db.execute("SELECT * FROM kittens")
+p kittens.class
+p kittens
 
 # add LOOOOTS of kittens!
 # so. many. kittens. 
