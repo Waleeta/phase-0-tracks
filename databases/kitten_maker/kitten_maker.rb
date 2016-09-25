@@ -6,7 +6,9 @@
 require 'sqlite3'
 require 'faker'
 
-# create SQLite3 database
+# Create SQLite3 database
+# Setting it to a variable ("db") helps us interact with it.
+db = SQLite3::Database.new("kittens.db") #THIS MAKES THE DATABASE
 
 #learn about fancy string delimiters
 
