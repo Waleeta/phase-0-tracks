@@ -13,7 +13,7 @@ db = SQLite3::Database.new("kittens.db") #THIS MAKES THE DATABASE
 
 #learn about fancy string delimiters
 create_table_cmd = <<-SQL 
-	CREATE TABLE kittens(
+	CREATE TABLE IF NOT EXISTS kittens(
 		id INTEGER PRIMARY KEY,
 		name VARCHAR(255),
 		age INT
@@ -26,6 +26,7 @@ SQL
 db.execute(create_table_cmd)
 
 # add a test kitten
+db.execute("INSERT INTO kittens (name, age) VALUES ('Bob', 3)")
 
 # explore ORM by retrieving data
 
