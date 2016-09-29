@@ -55,7 +55,7 @@ get '/students/:id' do
   students.to_s
 end
 
-# ####################################################################################
+#CONTACT route
 get '/contact' do 
   "Please contact us at: <br>
   PO Box 412<br>
@@ -64,6 +64,7 @@ get '/contact' do
   1-800-555-1234"
 end 
 
+#GREAT JOB route
 get '/great_job' do 
   #http://localhost:9393/great_job?name=waleeta
   name = params[:name]
@@ -74,6 +75,7 @@ get '/great_job' do
   end 
 end 
 
+#ADDS NUMBERS route:
 
 get '/adds/:num1/:num2' do 
     # num1 = params[:num1.to_s]
@@ -81,3 +83,6 @@ get '/adds/:num1/:num2' do
   "#{params[:num1].to_i + params[:num2].to_i}"
 
 end 
+
+
+
