@@ -84,5 +84,28 @@ get '/adds/:num1/:num2' do
 
 end 
 
+#BONUS FEATURE:
+get '/campus' do
+  #http://localhost:9393/campus?campus=CHI
+  #query parameter
+  print_out = ""
+  students = db.execute("SELECT * FROM students WHERE campus=?", [params[:campus]])
+  #p students.to_s
+  students.each do |student|
+    print_out << "Name: #{student['name']}<br>"
+    print_out << "Age: #{student['age']}<br>"
+    print_out << "Campus: #{student['campus']}<br><br>"
+  end
+  print_out
+end
+
+
+
+
+
+
+
+
+
 
 
